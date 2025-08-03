@@ -1,0 +1,24 @@
+require('dotenv').config();
+
+const email = process.env.EMAIL;
+const password = process.env.PASSWORD;
+
+function loginToBlackWolf() {
+  if (!email || !password) {
+    console.log("❌ Email හෝ Password එකක් දාලා නෑ. .env file එකට check කරන්න.");
+    return;
+  }
+
+  console.log("🛡️ Black Wolf Bot Authentication System");
+  console.log("📧 Email: " + email);
+  console.log("🔐 Password: " + "*".repeat(password.length));
+  
+  // Simulate login process
+  if (password === 'Shashika@2008') {
+    console.log("✅ සාර්ථකව පිවිසීම සිදු විය!");
+  } else {
+    console.log("❌ Password වැරදියි!");
+  }
+}
+
+module.exports = { loginToBlackWolf };
