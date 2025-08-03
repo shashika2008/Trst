@@ -1,0 +1,27 @@
+{
+  "name": "black-wolf",
+  "version": "1.0.0",
+  "description": "Black Wolf - A powerful WhatsApp bot powered by Shashika",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "black-wolf",
+    "shashika"
+  ],
+  "author": "Shashika",
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "pino": "^8.0.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
