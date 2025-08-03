@@ -1,0 +1,33 @@
+name: Node.js CI/CD - Black Wolf Bot
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # හොඳ Node.js LTS version එකක්
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests (if any)
+      run: npm test
+      continue-on-error: true   # ඔයාට test නැත්නම් ignore කරන්න
+
+    - name: Run Bot
+      run: node index.js
+      env:
+        EMAIL: ${{ secrets.EMAIL }}
+        PASSWORD: ${{ secrets.PASSWORD }}
