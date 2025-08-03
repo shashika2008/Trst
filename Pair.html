@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Black Wolf Pairing</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #qr {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛡️ Black Wolf - Scan to Pair</h1>
+  <div id="qr">
+    <!-- QR code will be injected here -->
+    <img id="qrImage" src="" alt="QR Code" />
+  </div>
+
+  <script>
+    // Replace this with dynamic loading from Node.js
+    const qrData = localStorage.getItem("qr"); // OR fetched from an endpoint
+    const img = document.getElementById("qrImage");
+    if (qrData) {
+      img.src = qrData;
+    } else {
+      img.alt = "QR code not found.";
+    }
+  </script>
+</body>
+</html>
